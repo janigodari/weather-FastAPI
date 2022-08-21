@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="{{ url_for('static', path='/style.css') }}" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/{fontawesome-kit}.js" crossorigin="anonymous"></script>
+    <title>Weather</title>
+  </head>
+  <body>
+    <div class="container">
+      <div class="weather-side">
+        <div class="weather-gradient"></div>
+        <div class="date-container">
+          <h2 class="date-dayname">{{ current_day }}</h2>
+          <span class="date-day">{{ current_date }}</span><i class="fa-solid fa-location-dot"></i>
+          <span class="location">{{ city }} , {{ country }}</span>
+        </div>
+        <div class="weather-container"><i class="{{ today_weather_icon }} fa-4x"></i>
+          <h1 class="weather-temp">{{ temp }} °C</h1>
+          <span class="weather-temp-min-max">Min  {{ temp_min }} °C</span><br>
+          <span class="weather-temp-min-max">Max  {{ temp_max }} °C</span>
+          <h3 class="weather-desc">{{ description }}</h3>
+        </div>
+      </div>
+      <div class="info-side">
+        <div class="today-info-container">
+          <div class="today-info">
+            <div class="precipitation"> <span class="title">FEELS LIKE</span><span
+                class="value">{{ feels_like }} °C</span>
+              <div class="clear"></div>
+            </div>
+            <div class="humidity"> <span class="title">HUMIDITY</span><span
+                class="value">{{ humidity }} %</span>
+              <div class="clear"></div>
+            </div>
+            <div class="wind"> <span class="title">WIND</span><span
+                class="value">{{ wind }} km/h</span>
+              <div class="clear"></div>
+            </div>
+          </div>
+        </div>
+        <div class="week-container">
+          <ul class="week-list">
+            <li class="active"><i class="{{ day_2_weather_icon }}"></i>
+              <span class="day-name">{{ day_2 }}</span><span class="day-temp">{{ temp_day_2}}°C</span>
+            </li>
+            <li>
+              <i class="{{ day_3_weather_icon }}"></i>
+              <span class="day-name">{{ day_3 }}</span><span class="day-temp">{{ temp_day_3 }}°C</span>
+            </li>
+            <li><i class="{{ day_4_weather_icon }}"></i>
+              <span class="day-name">{{ day_4 }}</span><span class="day-temp">{{ temp_day_4 }}°C</span>
+            </li>
+            <li><i class="{{ day_5_weather_icon }}"></i>
+              <span class="day-name">{{ day_5 }}</span><span class="day-temp">{{ temp_day_5 }}°C</span>
+            </li>
+            <div class="clear"></div>
+          </ul>
+        </div>
+        <div class="location-container">
+          <form action="/weather" method="get">
+            <input type="search" name="city" id="city" class="search" placeholder="Enter City">
+            <button type="submit" class="location-button"><span>Search</span></button>
+            <span class="warning">{{warning}}</span>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
