@@ -19,7 +19,7 @@ pip install requests
 pip install Jinja2
 ```
 
-##### Setup
+#### Setup
 
 1. Get API Key from [OpenWeather](https://openweathermap.org/api)
 
@@ -60,7 +60,7 @@ pip install Jinja2
 
 
 
-##### Credits
+#### Credits
 
 Weather template [Html,CSS] by Colin Espinas [Codepen](https://codepen.io/Call_in/pen/pMYGbZ)
 
